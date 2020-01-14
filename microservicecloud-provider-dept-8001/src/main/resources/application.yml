@@ -3,13 +3,13 @@ server:
   
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
-  type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
+  type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包(告诉mybaties扫描这个包下面的实体类）
   mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件（DeptMapper.xml 完成 DeptDaoImpl 的工作）
     
 spring:
    application:
-    name: microservicecloud-dept 
+    name: microservicecloud-dept                            #对外暴露的微服务名字，这个名字很重要，Eureka中会用到
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
