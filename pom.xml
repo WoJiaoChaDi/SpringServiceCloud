@@ -76,4 +76,30 @@
         </dependencies>
     </dependencyManagement>
 
+    <!-- 构建-->
+    <build>
+        <!--父工程名字-->
+        <finalName>SpringServiceCloud</finalName>
+        <resources>
+            <resource>
+                <!--允许访问该路径下的资源-->
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <!--yml中$开头和结尾的标记，能够读取pom文件的信息-->
+                        <delimit>$</delimit>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
 </project>
