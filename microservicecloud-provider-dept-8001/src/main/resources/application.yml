@@ -9,6 +9,7 @@ mybatis:
     
 spring:
    application:
+    #3个provider的微服务名字一定要一样，这样才能保证负载均衡的时候访问提一个微服务
     name: microservicecloud-dept                            #对外暴露的微服务名字，这个名字很重要，Eureka中会用到（Eureka-7001 服务器页面中 Application的名字，会全转成大写）
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型

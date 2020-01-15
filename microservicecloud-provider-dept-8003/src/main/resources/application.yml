@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8003
   
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
@@ -9,11 +9,12 @@ mybatis:
     
 spring:
    application:
+    #3个provider的微服务名字一定要一样，这样才能保证负载均衡的时候访问提一个微服务
     name: microservicecloud-dept                            #对外暴露的微服务名字，这个名字很重要，Eureka中会用到（Eureka-7001 服务器页面中 Application的名字，会全转成大写）
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
-    url: jdbc:mysql://192.168.198.136:3306/clouddb01              # 数据库名称
+    url: jdbc:mysql://192.168.198.136:3306/clouddb03              # 数据库名称
     username: root
     password: root
     dbcp2:
@@ -31,7 +32,7 @@ eureka:
       #集群
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/   #需要入住的eureka地址（即 eureka-7001 的 defaultZone）
   instance:
-    instance-id: microservicecloud-dept8001   #实例id（即Eureka-7001 服务器页面中的 Status）
+    instance-id: microservicecloud-dept8003   #实例id（即Eureka-7001 服务器页面中的 Status）
     prefer-ip-address: true     #访问路径可以显示IP地址(即选中 Eureka-7001 服务器页面中的 Status后 的 链接IP)
 
 
