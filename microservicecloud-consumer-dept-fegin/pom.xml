@@ -18,6 +18,12 @@
             <version>${project.version}</version>
         </dependency>
 
+        <!--feign相关模块-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+        </dependency>
+
         <!-- Ribbon相关,Ribbon需要Eureka整合 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
