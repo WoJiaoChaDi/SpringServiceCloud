@@ -27,7 +27,9 @@ eureka:
 #    enable-self-preservation: false   #禁用自我保护机制，一般建议起开自我保护，使用默认的 true
   client: #客户端注册进eureka服务列表内
     service-url:
-      defaultZone: http://localhost:7001/eureka   #需要入住的eureka地址（即 eureka-7001 的 defaultZone）
+#      defaultZone: http://localhost:7001/eureka   #需要入住的eureka地址（即 eureka-7001 的 defaultZone）
+      #集群
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/   #需要入住的eureka地址（即 eureka-7001 的 defaultZone）
   instance:
     instance-id: microservicecloud-dept8001   #实例id（即Eureka-7001 服务器页面中的 Status）
     prefer-ip-address: true     #访问路径可以显示IP地址(即选中 Eureka-7001 服务器页面中的 Status后 的 链接IP)
