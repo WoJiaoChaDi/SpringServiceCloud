@@ -13,6 +13,20 @@ eureka:
     instance-id: gateway-9527.com
     prefer-ip-address: true 
  
+
+#之前用真实地址访问
+#http://gateway-9527.com:9527/microservicecloud-dept/dept/list
+zuul:
+  #统一前缀
+  prefix: /atguigu
+  #忽略所有的微服务（即不能通过原来的 微服务名字 来进行访问）  如要忽略单个微服务名字：#ignored-services: microservicecloud-dept
+  ignored-services: "*"
+  #映射规则
+  routes:
+    #将真实的微服务 microservicecloud-dept 映射 为 /mydept/**
+    mydept.serviceId: microservicecloud-dept
+    mydept.path: /mydept/**
+
 info:
   app.name: atguigu-microcloud
   company.name: www.atguigu.com
