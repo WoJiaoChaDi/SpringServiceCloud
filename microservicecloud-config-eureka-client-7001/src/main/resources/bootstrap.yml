@@ -1,0 +1,12 @@
+spring: 
+  cloud: 
+    config: 
+      name: microservicecloud-eureka-client     #需要从github上读取的资源名称，注意没有yml后缀名
+      profile: dev
+      label: master    #分支
+      uri: http://config-3344.com:3344      #SpringCloudConfig获取的服务地址
+
+#1.先启动config-3344
+#2.再启动config-eureka-7001
+#3.根据profiles的配置，从github上获取对应的配置，来决定此Eureka微服务的配置
+#4.访问Eureka主页：http://eureka7001.com:7001/
