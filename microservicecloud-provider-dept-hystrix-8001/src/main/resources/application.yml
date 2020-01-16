@@ -32,7 +32,7 @@ eureka:
       #集群
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/   #需要入住的eureka地址（即 eureka-7001 的 defaultZone）
   instance:
-    instance-id: microservicecloud-dept8001-hystrix   #实例id标注为 hystrix 
+    instance-id: microservicecloud-dept8001-hystrix   #实例id标注为 hystrix
     prefer-ip-address: true     #访问路径可以显示IP地址(即选中 Eureka-7001 服务器页面中的 Status后 的 链接IP)
 
 
