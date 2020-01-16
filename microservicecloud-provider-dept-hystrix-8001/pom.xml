@@ -19,6 +19,12 @@
             <version>${project.version}</version>
         </dependency>
 
+        <!-- hystrix -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix</artifactId>
+        </dependency>
+
         <!-- 将微服务provider侧注册进eureka   start -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
