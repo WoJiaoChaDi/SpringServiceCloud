@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    config:
+      name: microservicecloud-dept-client #需要从github上读取的资源名称，注意没有yml后缀名
+      #profile配置是什么就取什么配置dev or test
+#      profile: dev
+      profile: test
+      label: master
+      uri: http://config-3344.com:3344  #SpringCloudConfig获取的服务地址
+
+#1.先启动config-3344
+#2.再启动config-eureka-7001
+#3.再启动config-dept-8001
+#3.根据profiles的配置，从github上获取对应的配置，来决定此Eureka微服务的配置
+#4.访问Eureka主页：http://localhost:8001/dept/list   根据访问的数据库是那个，来看是不是启用了对应的配置
