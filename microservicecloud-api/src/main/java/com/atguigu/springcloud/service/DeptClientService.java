@@ -13,14 +13,14 @@ import java.util.List;
  * 
  * @Description: 修改microservicecloud-api工程，根据已经有的DeptClientService接口
 
-新建
 
-一个实现了FallbackFactory接口的类DeptClientServiceFallbackFactory
+	服务降级：新建一个实现了FallbackFactory接口的类DeptClientServiceFallbackFactory
  * @author zzyy
  * @date 2018年4月21日
  */
 //@FeignClient(value = "MICROSERVICECLOUD-DEPT")
-@FeignClient(value = "MICROSERVICECLOUD-DEPT")
+//相当于这个接口中的所有异常，都去fallbackFactory定义的类去找
+@FeignClient(value = "MICROSERVICECLOUD-DEPT", fallbackFactory=DeptClientServiceFallbackFactory.class)
 public interface DeptClientService
 {
 	@RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
